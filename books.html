@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org"><!--setting up xml namespace-->
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Framework Guru</title>
+</head>
+<body>
+    <h1>Book List</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>title</th>
+            <th>Publisher</th>
+        </tr>
+        <tr th:each="book : ${books}"><!--Using thymeleaf iterator & taking books property from the model which is rendered from spring mvc-->
+            <td th:text="${book.id}">123</td><!--Standard dialects of thymeleaf th and variables expression ${}-->
+            <td th:text="${book.title}">Spring In Action</td>
+            <td th:text="${book.publisher.name}">Wrox</td>
+        </tr>
+    </table>
+</body>
+</html>
