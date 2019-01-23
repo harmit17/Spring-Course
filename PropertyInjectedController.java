@@ -9,7 +9,8 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class PropertyInjectedController {
 
-    @Autowired                                  //what you want to inject
+    @Autowired//what you want to inject
+    @Qualifier("greetingServiceImpl")   //If @Qualifier is commented then primaryservice will override sayHello() and printHello!!-Primary Greeting Service 2 times
     public GreetingService greetingServiceImpl;//using property
 
     public String sayHello(){
